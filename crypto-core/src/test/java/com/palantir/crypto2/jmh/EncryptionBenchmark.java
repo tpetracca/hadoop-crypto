@@ -89,8 +89,8 @@ public class EncryptionBenchmark {
         KeyMaterial key = KeyMaterials.generateKeyMaterial("AES", 256, 16);
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        CtrCryptoOutputStream output = new CtrCryptoOutputStream(
-                props, baos, key.getSecretKey().getEncoded(), key.getIv());
+        CtrCryptoOutputStream output =
+                new CtrCryptoOutputStream(props, baos, key.getSecretKey().getEncoded(), key.getIv());
 
         output.write(state.data);
     }
